@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Prajjwal Shah personal portfolio website">
+
+    <meta name="keywords"
+          content="Prajjwal Shah, portfolio, web developer, IT student">
+
+    <meta name="author"
+          content="Prajjwal Shah">
+
+    <title>Prajjwal Shah | Portfolio</title>
+
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        ul {
+            list-style: none;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+
+        .navbar {
+            max-width: 1150px;
+            min-height: 70px;
+            margin: auto;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #222;
+        }
+
+
+        .logo span {
+            color: #2563eb;
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+        .nav-links a {
+            padding: 10px 15px;
+
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+
+        .menu-btn {
+            display: none;
+
+            border: none;
+            background: transparent;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+
+        /* ================= PAGE SYSTEM ================= */
+
+        .page {
+            display: none;
+            min-height: calc(100vh - 70px);
+        }
+
+
+        .page.active-page {
+            display: block;
+        }
+
+
+        /* ================= HOME ================= */
+
+        .hero {
+            max-width: 1150px;
+            margin: auto;
+            padding: 90px 20px;
+
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+
+            align-items: center;
+            gap: 50px;
+        }
+
+
+        .small-title {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+
+        .hero h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+
+        .hero h2 {
+            color: #555;
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+
+        .hero-text {
+            max-width: 650px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 12px 22px;
+
+            background: #2563eb;
+            color: white;
+
+            border: 2px solid #2563eb;
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+
+        .btn-outline {
+            background: transparent;
+            color: #2563eb;
+        }
+
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+
+        /* PROFILE IMAGE */
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .image-box {
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+            overflow: hidden;
+
+            border: 8px solid white;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+        }
+
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ================= GENERAL SECTION ================= */
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .section-heading p {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+
+        .section-heading h2 {
+            font-size: 34px;
+            margin-top: 5px;
+        }
+
+
+        /* ================= STATS ================= */
+
+        .stats {
+            max-width: 1100px;
+            margin: 0 auto;
+
+            padding: 0 20px 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+
+        .stat-box {
+            background: white;
+            padding: 25px;
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+
+        .stat-box i {
+            color: #2563eb;
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+
+        .stat-box h3 {
+            font-size: 28px;
+        }
+
+
+        .stat-box p {
+            color: #666;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+
+        .card {
+            background: white;
+            padding: 30px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .card i {
+            color: #2563eb;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+
+        .card p {
+            color: #666;
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+
+        .project-card {
+            background: white;
+            padding: 30px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+
+            transition: 0.3s;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .project-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8efff;
+            color: #2563eb;
+
+            border-radius: 10px;
+
+            margin-bottom: 18px;
+
+            font-size: 23px;
+        }
+
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+
+        .project-card p {
+            color: #666;
+        }
+
+
+        /* ================= PAGE HEADER ================= */
+
+        .page-header {
+            background: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+
+        .page-header p:first-child {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+
+        .page-header h1 {
+            font-size: 45px;
+            margin: 8px 0;
+        }
+
+
+        .page-header p:last-child {
+            color: #666;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about-container {
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 80px 20px;
+
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+
+            display: block;
+            margin: auto;
+
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+
+        .about-content h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+
+        .about-content p:not(.small-title) {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+
+        /* ================= DETAILS ================= */
+
+        .details-container {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+
+        .detail-box {
+            background: white;
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+
+        .detail-box i {
+            color: #2563eb;
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+
+        .detail-box p {
+            color: #666;
+        }
+
+
+        /* ================= PROGRESS ================= */
+
+        .skills-list {
+            max-width: 800px;
+            margin: auto;
+        }
+
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+
+        .skill-title {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+
+        .progress {
+            height: 10px;
+
+            background: #ddd;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+
+        .progress-bar {
+            height: 100%;
+            background: #2563eb;
+        }
+
+
+        .html {
+            width: 90%;
+        }
+
+
+        .css {
+            width: 85%;
+        }
+
+
+        .javascript {
+            width: 70%;
+        }
+
+
+        .design {
+            width: 80%;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 80px 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+        }
+
+
+        .contact-info h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+
+        .contact-description {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8efff;
+            color: #2563eb;
+
+            border-radius: 8px;
+
+            font-size: 19px;
+        }
+
+
+        .contact-item h3 {
+            font-size: 16px;
+        }
+
+
+        .contact-item p,
+        .contact-item a {
+            color: #666;
+        }
+
+
+        .contact-item a:hover {
+            color: #2563eb;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        }
+
+
+        .contact-form h2 {
+            margin-bottom: 25px;
+        }
+
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 6px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2563eb;
+        }
+
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+
+        #formMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+            max-width: 1000px;
+            margin: 40px auto 70px;
+
+            padding: 55px 20px;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+        }
+
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+
+        .cta p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111827;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+        }
+
+
+        footer p {
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:900px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+
+            .hero-text {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .buttons {
+                justify-content: center;
+            }
+
+
+            .card-container,
+            .project-container {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+
+            .details-container {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media(max-width:650px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                flex-direction: column;
+
+                padding: 15px;
+            }
+
+
+            .nav-links.show {
+                display: flex;
+            }
+
+
+            .nav-links li {
+                width: 100%;
+            }
+
+
+            .nav-links a {
+                justify-content: center;
+            }
+
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+
+            .image-box {
+                width: 230px;
+                height: 230px;
+            }
+
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+
+            .card-container,
+            .project-container,
+            .details-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            .page-header h1 {
+                font-size: 38px;
+            }
+
+
+            .about-content h2,
+            .contact-info h2 {
+                font-size: 30px;
+            }
+
+
+            .contact-form {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            Prajjwal<span>.</span>
+        </a>
+
+
+        <button class="menu-btn" id="menuBtn">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-house"></i>
+                    Home
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    About
+                </a>
+            </li>
+
+
+            <li>
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ===================================================== -->
+<!-- ================= HOME PAGE ========================= -->
+<!-- ===================================================== -->
+
+<section class="page active-page" id="home">
+
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                WELCOME TO MY PORTFOLIO
+            </p>
+
+
+            <h1>
+                Hello, I am
+                <span>Prajjwal Shah</span>
+            </h1>
+
+
+            <h2>
+                Web Developer | Tech Student
+            </h2>
+
+
+            <p class="hero-text">
+                I am an IT student interested in web development,
+                modern technology and creating useful digital
+                solutions. I enjoy learning new technologies
+                and developing practical projects.
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#about" class="btn nav-link">
+                    <i class="fas fa-user"></i>
+                    About Me
+                </a>
+
+
+                <a href="#contact" class="btn btn-outline nav-link">
+                    <i class="fas fa-envelope"></i>
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="image-box">
+
+                <!-- Replace this URL with your own image if required -->
+
+                <img src="https://via.placeholder.com/300"
+                     alt="Prajjwal Shah">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat-box">
+
+            <i class="fas fa-code"></i>
+
+            <h3>5+</h3>
+
+            <p>
+                Skills
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <i class="fas fa-folder-open"></i>
+
+            <h3>3+</h3>
+
+            <p>
+                Projects
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <i class="fas fa-laptop-code"></i>
+
+            <h3>IT</h3>
+
+            <p>
+                Student
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SKILLS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <p>
+                MY SKILLS
+            </p>
+
+            <h2>
+                What I Do
+            </h2>
+
+        </div>
+
+
+        <div class="card-container">
+
+
+            <div class="card">
+
+                <i class="fab fa-html5"></i>
+
+                <h3>
+                    HTML5
+                </h3>
+
+                <p>
+                    Creating clean and structured web pages
+                    using HTML5.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fab fa-css3-alt"></i>
+
+                <h3>
+                    CSS
+                </h3>
+
+                <p>
+                    Designing responsive layouts using
+                    modern CSS techniques.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fab fa-js"></i>
+
+                <h3>
+                    JavaScript
+                </h3>
+
+                <p>
+                    Adding interactive features and
+                    dynamic behavior to websites.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fas fa-palette"></i>
+
+                <h3>
+                    Web Design
+                </h3>
+
+                <p>
+                    Creating simple and user-friendly
+                    website interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fas fa-brain"></i>
+
+                <h3>
+                    Technology
+                </h3>
+
+                <p>
+                    Exploring modern technologies and
+                    improving technical knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fas fa-users"></i>
+
+                <h3>
+                    Teamwork
+                </h3>
+
+                <p>
+                    Working with others and learning
+                    through collaborative projects.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROJECTS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <p>
+                MY WORK
+            </p>
+
+            <h2>
+                Projects
+            </h2>
+
+        </div>
+
+
+        <div class="project-container">
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+
+                    <i class="fas fa-globe"></i>
+
+                </div>
+
+
+                <h3>
+                    Portfolio Website
+                </h3>
+
+
+                <p>
+                    A personal portfolio website designed
+                    to showcase my skills, projects and
+                    contact information.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+
+                    <i class="fas fa-car"></i>
+
+                </div>
+
+
+                <h3>
+                    AI Traffic Signal Project
+                </h3>
+
+
+                <p>
+                    A traffic signal simulation project
+                    developed to demonstrate intelligent
+                    traffic control concepts.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+
+                    <i class="fas fa-utensils"></i>
+
+                </div>
+
+
+                <h3>
+                    Food Ordering Website
+                </h3>
+
+
+                <p>
+                    A food ordering website concept
+                    designed using HTML, CSS and JavaScript.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- ================= ABOUT PAGE ======================== -->
+<!-- ===================================================== -->
+
+<section class="page" id="about">
+
+
+    <div class="page-header">
+
+        <p>
+            GET TO KNOW ME
+        </p>
+
+        <h1>
+            About Me
+        </h1>
+
+        <p>
+            Learn more about my background, interests and skills.
+        </p>
+
+    </div>
+
+
+
+    <div class="about-container">
+
+
+        <div class="about-image">
+
+            <div class="image-box">
+
+                <img src="https://via.placeholder.com/300"
+                     alt="Prajjwal Shah">
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="small-title">
+                WHO I AM
+            </p>
+
+
+            <h2>
+                Prajjwal Shah
+            </h2>
+
+
+            <p>
+                I am an IT student with an interest in web
+                development and modern technology.
+            </p>
+
+
+            <p>
+                I enjoy creating websites and learning new
+                technologies through practical projects.
+                My aim is to continuously improve my technical
+                knowledge and develop useful applications.
+            </p>
+
+
+            <p>
+                I believe that practical learning, teamwork
+                and continuous improvement are important for
+                developing a successful career in information
+                technology.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PERSONAL DETAILS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <p>
+                PERSONAL INFORMATION
+            </p>
+
+            <h2>
+                My Details
+            </h2>
+
+        </div>
+
+
+        <div class="details-container">
+
+
+            <div class="detail-box">
+
+                <i class="fas fa-user"></i>
+
+                <h3>
+                    Name
+                </h3>
+
+                <p>
+                    Prajjwal Shah
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <i class="fas fa-graduation-cap"></i>
+
+                <h3>
+                    Field
+                </h3>
+
+                <p>
+                    Information Technology
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <i class="fas fa-code"></i>
+
+                <h3>
+                    Interest
+                </h3>
+
+                <p>
+                    Web Development
+                </p>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <i class="fas fa-location-dot"></i>
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    Nepal
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SKILLS -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <p>
+                TECHNICAL KNOWLEDGE
+            </p>
+
+            <h2>
+                My Skills
+            </h2>
+
+        </div>
+
+
+        <div class="skills-list">
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>
+                        HTML5
+                    </span>
+
+                    <span>
+                        90%
+                    </span>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div class="progress-bar html"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        85%
+                    </span>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div class="progress-bar css"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        70%
+                    </span>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div class="progress-bar javascript"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skill-title">
+
+                    <span>
+                        Web Design
+                    </span>
+
+                    <span>
+                        80%
+                    </span>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div class="progress-bar design"></div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- ================= CONTACT PAGE ====================== -->
+<!-- ===================================================== -->
+
+<section class="page" id="contact">
+
+
+    <div class="page-header">
+
+        <p>
+            GET IN TOUCH
+        </p>
+
+        <h1>
+            Contact Me
+        </h1>
+
+        <p>
+            Feel free to contact me for any project or discussion.
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-container">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <p class="small-title">
+                CONTACT INFORMATION
+            </p>
+
+
+            <h2>
+                Let's Connect
+            </h2>
+
+
+            <p class="contact-description">
+                You can contact me using the information
+                provided below.
+            </p>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-envelope"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <a href="mailto:prajwshah@gmail.com">
+                        prajwshah@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-phone"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <p>
+                        +977 9824924013
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-location-dot"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Location
+                    </h3>
+
+                    <p>
+                        Nepal
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+
+                    <i class="fab fa-linkedin"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        LinkedIn
+                    </h3>
+
+                    <a href="https://www.linkedin.com/"
+                       target="_blank">
+
+                        View LinkedIn Profile
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+            <h2>
+                Send a Message
+            </h2>
+
+
+            <form id="contactForm">
+
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input type="text"
+                           id="name"
+                           placeholder="Enter your name"
+                           required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Your Email
+                    </label>
+
+                    <input type="email"
+                           id="email"
+                           placeholder="Enter your email"
+                           required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input type="text"
+                           id="subject"
+                           placeholder="Enter subject"
+                           required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea id="message"
+                              rows="6"
+                              placeholder="Write your message"
+                              required></textarea>
+
+                </div>
+
+
+
+                <button type="submit" class="btn">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    Send Message
+
+                </button>
+
+
+                <p id="formMessage"></p>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Prajjwal Shah. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /* ================= MOBILE MENU ================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+
+    const navLinks = document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener("click", function () {
+
+        navLinks.classList.toggle("show");
+
+        const icon = menuBtn.querySelector("i");
+
+
+        if (navLinks.classList.contains("show")) {
+
+            icon.classList.remove("fa-bars");
+
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+
+    /* ================= PAGE NAVIGATION ================= */
+
+    const pages = document.querySelectorAll(".page");
+
+    const navigationLinks = document.querySelectorAll(".nav-link");
+
+
+    function showPage(pageId) {
+
+        pages.forEach(function(page) {
+
+            page.classList.remove("active-page");
+
+        });
+
+
+        const selectedPage = document.getElementById(pageId);
+
+
+        if (selectedPage) {
+
+            selectedPage.classList.add("active-page");
+
+        }
+
+
+        navigationLinks.forEach(function(link) {
+
+            link.classList.remove("active");
+
+
+            if (link.getAttribute("href") === "#" + pageId) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+
+        navLinks.classList.remove("show");
+
+
+        const icon = menuBtn.querySelector("i");
+
+        icon.classList.remove("fa-xmark");
+
+        icon.classList.add("fa-bars");
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    navigationLinks.forEach(function(link) {
+
+        link.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            const pageId = link.getAttribute("href").substring(1);
+
+            showPage(pageId);
+
+            history.pushState(null, "", "#" + pageId);
+
+        });
+
+    });
+
+
+
+    /* ================= DIRECT URL ================= */
+
+    function loadPage() {
+
+        let pageId = window.location.hash.substring(1);
+
+
+        if (!pageId) {
+
+            pageId = "home";
+
+        }
+
+
+        showPage(pageId);
+
+    }
+
+
+    loadPage();
+
+
+
+    /* ================= BROWSER BACK/FORWARD ================= */
+
+    window.addEventListener("popstate", function() {
+
+        loadPage();
+
+    });
+
+
+
+    /* ================= CONTACT FORM ================= */
+
+    const contactForm = document.getElementById("contactForm");
+
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const subject =
+            document.getElementById("subject").value.trim();
+
+        const message =
+            document.getElementById("message").value.trim();
+
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+
+        if (
+            name === "" ||
+            email === "" ||
+            subject === "" ||
+            message === ""
+        ) {
+
+            formMessage.textContent =
+                "Please fill in all fields.";
+
+            formMessage.style.color = "red";
+
+            return;
+
+        }
+
+
+        formMessage.textContent =
+            "Thank you! Your message has been received.";
+
+        formMessage.style.color = "green";
+
+
+        contactForm.reset();
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
